@@ -75,8 +75,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --yellow: #FFD600;
-      --yellow-hover: #FFC200;
+      --yellow: #1E4FA8;
+      --yellow-hover: #163D8A;
+      --blue-light: #60A5FA;
       --dark: #0D0F14;
       --dark2: #151820;
       --dark3: #1E2230;
@@ -106,7 +107,7 @@
       padding: 18px 6%;
       background: rgba(13, 15, 20, 0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,214,0,0.12);
+      border-bottom: 1px solid rgba(96,165,250,0.12);
     }
 
     .logo {
@@ -143,7 +144,7 @@
       line-height: 1.1;
     }
 
-    .logo-text span { color: var(--yellow); }
+    .logo-text span { color: var(--blue-light); }
 
     .logo-text small {
       display: block;
@@ -174,8 +175,8 @@
     }
 
     .nav-instagram:hover {
-      border-color: rgba(255,214,0,0.4);
-      background: rgba(255,214,0,0.08);
+      border-color: rgba(96,165,250,0.4);
+      background: rgba(96,165,250,0.08);
       color: var(--yellow);
     }
 
@@ -186,7 +187,7 @@
       align-items: center;
       gap: 10px;
       background: var(--yellow);
-      color: var(--dark);
+      color: var(--white);
       font-weight: 700;
       font-size: 0.9rem;
       padding: 10px 20px;
@@ -212,16 +213,16 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(255,214,0,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 50% at 20% 80%, rgba(255,214,0,0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(96,165,250,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 80%, rgba(96,165,250,0.04) 0%, transparent 60%);
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,214,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,214,0,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(96,165,250,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96,165,250,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
     }
@@ -235,8 +236,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,214,0,0.12);
-      border: 1px solid rgba(255,214,0,0.3);
+      background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.3);
       color: var(--yellow);
       font-size: 0.8rem;
       font-weight: 600;
@@ -272,7 +273,7 @@
 
     h1 em {
       font-style: normal;
-      color: var(--yellow);
+      color: var(--blue-light);
     }
 
     .hero-sub {
@@ -293,20 +294,20 @@
       align-items: center;
       gap: 10px;
       background: var(--yellow);
-      color: var(--dark);
+      color: var(--white);
       font-weight: 700;
       font-size: 1rem;
       padding: 16px 32px;
       border-radius: 50px;
       text-decoration: none;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 0 0 0 rgba(255,214,0,0.4);
+      box-shadow: 0 0 0 0 rgba(96,165,250,0.4);
     }
 
     .btn-primary:hover {
       background: var(--yellow-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,214,0,0.25);
+      box-shadow: 0 8px 32px rgba(96,165,250,0.25);
     }
 
     .btn-primary svg { width: 22px; height: 22px; flex-shrink: 0; }
@@ -327,8 +328,8 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(255,214,0,0.4);
-      background: rgba(255,214,0,0.06);
+      border-color: rgba(96,165,250,0.4);
+      background: rgba(96,165,250,0.06);
     }
 
     .hero-stats {
@@ -346,7 +347,7 @@
       letter-spacing: -0.03em;
     }
 
-    .stat-value span { color: var(--yellow); }
+    .stat-value span { color: var(--blue-light); }
 
     .stat-label {
       font-size: 0.8rem;
@@ -362,7 +363,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--yellow);
+      color: var(--blue-light);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -375,7 +376,7 @@
       display: block;
       width: 20px;
       height: 2px;
-      background: var(--yellow);
+      background: var(--blue-light);
       border-radius: 2px;
     }
 
@@ -388,7 +389,7 @@
       margin-bottom: 16px;
     }
 
-    .section-title em { font-style: normal; color: var(--yellow); }
+    .section-title em { font-style: normal; color: var(--blue-light); }
 
     .section-sub {
       font-size: 1rem;
@@ -438,7 +439,7 @@
     }
 
     .service-card:hover {
-      border-color: rgba(255,214,0,0.25);
+      border-color: rgba(96,165,250,0.25);
       transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.3);
     }
@@ -448,7 +449,7 @@
     .service-icon {
       width: 56px;
       height: 56px;
-      background: rgba(255,214,0,0.1);
+      background: rgba(96,165,250,0.1);
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -457,9 +458,9 @@
       transition: background 0.2s;
     }
 
-    .service-card:hover .service-icon { background: rgba(255,214,0,0.18); }
+    .service-card:hover .service-icon { background: rgba(96,165,250,0.18); }
 
-    .service-icon svg { width: 28px; height: 28px; stroke: var(--yellow); }
+    .service-icon svg { width: 28px; height: 28px; stroke: var(--blue-light); }
 
     .service-card h3 {
       font-size: 1.2rem;
@@ -532,14 +533,14 @@
       width: 44px;
       height: 44px;
       flex-shrink: 0;
-      background: rgba(255,214,0,0.1);
+      background: rgba(96,165,250,0.1);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .why-feature-icon svg { width: 22px; height: 22px; stroke: var(--yellow); }
+    .why-feature-icon svg { width: 22px; height: 22px; stroke: var(--blue-light); }
 
     .why-feature h4 {
       font-size: 1rem;
@@ -564,7 +565,7 @@
     .why-card-main .big-number {
       font-size: 5rem;
       font-weight: 900;
-      color: var(--yellow);
+      color: var(--blue-light);
       line-height: 1;
       letter-spacing: -0.04em;
     }
@@ -592,18 +593,18 @@
       gap: 16px;
     }
 
-    .why-card-sub svg { width: 32px; height: 32px; stroke: var(--dark); flex-shrink: 0; }
+    .why-card-sub svg { width: 32px; height: 32px; stroke: var(--white); flex-shrink: 0; }
 
     .why-card-sub strong {
       display: block;
       font-size: 1rem;
       font-weight: 800;
-      color: var(--dark);
+      color: var(--white);
     }
 
     .why-card-sub span {
       font-size: 0.82rem;
-      color: rgba(13,15,20,0.7);
+      color: rgba(255,255,255,0.7);
     }
 
     /* ── CTA ── */
@@ -729,7 +730,7 @@
   <a href="#" class="logo">
     <div class="logo-mark">
       <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0D0F14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       </div>
@@ -1015,7 +1016,7 @@
   <a href="#" class="logo">
     <div class="logo-mark">
       <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0D0F14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       </div>
