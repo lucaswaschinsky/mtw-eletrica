@@ -730,35 +730,33 @@
       color: #fff;
     }
 
-    @media (max-width: 768px) {
-      .float-wa {
-        width: auto;
-        min-width: 62px;
-        max-width: 62px;
-        border-radius: 31px;
-        overflow: hidden;
-        transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.4s ease, transform 0.2s, box-shadow 0.2s;
-      }
+    .float-wa {
+      width: auto;
+      min-width: 62px;
+      max-width: 62px;
+      border-radius: 31px;
+      overflow: hidden;
+      transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.4s ease, transform 0.2s, box-shadow 0.2s;
+    }
 
-      .float-wa-text {
-        display: block;
-        opacity: 0;
-        max-width: 0;
-        overflow: hidden;
-        transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease 0.2s;
-      }
+    .float-wa-text {
+      display: block;
+      opacity: 0;
+      max-width: 0;
+      overflow: hidden;
+      transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease 0.2s;
+    }
 
-      .float-wa.expanded {
-        max-width: 280px;
-        padding: 0 22px;
-        gap: 12px;
-        animation: none;
-      }
+    .float-wa.expanded {
+      max-width: 280px;
+      padding: 0 22px;
+      gap: 12px;
+      animation: none;
+    }
 
-      .float-wa.expanded .float-wa-text {
-        opacity: 1;
-        max-width: 200px;
-      }
+    .float-wa.expanded .float-wa-text {
+      opacity: 1;
+      max-width: 200px;
     }
 
     /* ── RESPONSIVE ── */
@@ -1110,9 +1108,10 @@
   var servicos = document.getElementById('servicos');
   if (!btn || !servicos) return;
 
+  var nav = document.querySelector('nav');
   function check() {
-    if (window.innerWidth > 768) { btn.classList.remove('expanded'); return; }
-    btn.classList.toggle('expanded', servicos.getBoundingClientRect().top < 0);
+    var threshold = nav ? nav.offsetHeight : 0;
+    btn.classList.toggle('expanded', servicos.getBoundingClientRect().top <= threshold);
   }
 
   window.addEventListener('scroll', check, { passive: true });
