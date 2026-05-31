@@ -721,6 +721,46 @@
       50% { transform: translateY(-6px); }
     }
 
+    /* ── FLOATING WA EXPANDED (mobile) ── */
+    .float-wa-text {
+      display: none;
+      white-space: nowrap;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .float-wa {
+        width: auto;
+        min-width: 62px;
+        max-width: 62px;
+        border-radius: 31px;
+        overflow: hidden;
+        transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.4s ease, transform 0.2s, box-shadow 0.2s;
+      }
+
+      .float-wa-text {
+        display: block;
+        opacity: 0;
+        max-width: 0;
+        overflow: hidden;
+        transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease 0.2s;
+      }
+
+      .float-wa.expanded {
+        max-width: 280px;
+        padding: 0 22px;
+        gap: 12px;
+        animation: none;
+      }
+
+      .float-wa.expanded .float-wa-text {
+        opacity: 1;
+        max-width: 200px;
+      }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .why-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1055,13 +1095,31 @@
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/5513996984414?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." class="float-wa" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" onclick="return gtag_report_conversion(this.href);">
-  <svg viewBox="0 0 24 24" fill="white">
+  <svg viewBox="0 0 24 24" fill="white" style="flex-shrink:0">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.113.553 4.094 1.523 5.816L.061 23.45a.5.5 0 00.609.609l5.686-1.492A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.935 9.935 0 01-5.098-1.401l-.364-.217-3.775.99.999-3.68-.237-.377A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
+  <span class="float-wa-text">Solicitar Orçamento Grátis</span>
 </a>
 
 
 <script defer src="/_vercel/insights/script.js"></script>
+
+<script>
+(function () {
+  var btn = document.querySelector('.float-wa');
+  var servicos = document.getElementById('servicos');
+  if (!btn || !servicos) return;
+
+  function check() {
+    if (window.innerWidth > 768) { btn.classList.remove('expanded'); return; }
+    btn.classList.toggle('expanded', servicos.getBoundingClientRect().top < 0);
+  }
+
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  check();
+}());
+</script>
 
 <script>
 function gtag_report_conversion(url) {
